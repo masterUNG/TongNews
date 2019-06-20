@@ -30,15 +30,20 @@ class _AuthenState extends State<Authen> {
   }
 
   Widget singUp() {
-    return RaisedButton(color: Colors.orange[400],
+    return RaisedButton(
+      color: Colors.orange[400],
       child: Text('Sign Up'),
       onPressed: () {},
     );
   }
 
   Widget signIn() {
-    return RaisedButton(color: Colors.orange[900],
-      child: Text('Sign In', style: TextStyle(color: Colors.white),),
+    return RaisedButton(
+      color: Colors.orange[900],
+      child: Text(
+        'Sign In',
+        style: TextStyle(color: Colors.white),
+      ),
       onPressed: () {},
     );
   }
@@ -100,6 +105,12 @@ class _AuthenState extends State<Authen> {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Container(
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            colors: [Colors.white, Colors.orange[700]],
+            radius: 1.5, center: Alignment(0, 0)
+          ),
+        ),
         padding: EdgeInsets.only(top: 80.0),
         alignment: Alignment.topCenter,
         child: Column(
