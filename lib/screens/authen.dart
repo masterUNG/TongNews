@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tong_news/screens/register.dart';
 
 class Authen extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _AuthenState extends State<Authen> {
     );
   }
 
-  Widget showButton() {
+  Widget showButton(BuildContext context) {
     return Container(
       width: 250.0,
       child: Row(
@@ -22,18 +23,25 @@ class _AuthenState extends State<Authen> {
           ),
           mySizebox(),
           Expanded(
-            child: singUp(),
+            child: singUp(context),
           ),
         ],
       ),
     );
   }
 
-  Widget singUp() {
+  Widget singUp(BuildContext context) {
     return RaisedButton(
       color: Colors.orange[400],
       child: Text('Sign Up'),
-      onPressed: () {},
+      onPressed: () {
+        print('You Click SignUp');
+
+        // Create Route
+        var registerRoute = MaterialPageRoute(builder: (BuildContext context) => Register());
+        Navigator.of(context).push(registerRoute);
+
+      },
     );
   }
 
@@ -119,7 +127,7 @@ class _AuthenState extends State<Authen> {
             showName(),
             emailTextFormField(),
             passwordTextFormField(),
-            showButton(),
+            showButton(context),
           ],
         ),
       ),
