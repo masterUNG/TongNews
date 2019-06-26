@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tong_news/screens/news_list.dart';
 import 'package:tong_news/screens/register.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Authen extends StatefulWidget {
   @override
@@ -7,6 +9,33 @@ class Authen extends StatefulWidget {
 }
 
 class _AuthenState extends State<Authen> {
+  // Explicit
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+
+  // Method
+  @override
+  void initState() {
+    super.initState();
+    loadCurrentUser();
+  }
+
+  Future loadCurrentUser() async {
+    await firebaseAuth.currentUser().then((objValue) {
+      if (objValue != null) {
+        print('Logined');
+
+
+
+      }
+    });
+  }
+
+  void moveToNewsList(BuildContext context){
+
+    var newsListRoute = MaterialPageRoute(builder: (BuildContext context) => NewsList());
+
+  }
+
   Widget mySizebox() {
     return SizedBox(
       width: 3.0,
@@ -38,9 +67,9 @@ class _AuthenState extends State<Authen> {
         print('You Click SignUp');
 
         // Create Route
-        var registerRoute = MaterialPageRoute(builder: (BuildContext context) => Register());
+        var registerRoute =
+            MaterialPageRoute(builder: (BuildContext context) => Register());
         Navigator.of(context).push(registerRoute);
-
       },
     );
   }
@@ -115,9 +144,9 @@ class _AuthenState extends State<Authen> {
       body: Container(
         decoration: BoxDecoration(
           gradient: RadialGradient(
-            colors: [Colors.white, Colors.orange[700]],
-            radius: 1.5, center: Alignment(0, 0)
-          ),
+              colors: [Colors.white, Colors.orange[700]],
+              radius: 1.5,
+              center: Alignment(0, 0)),
         ),
         padding: EdgeInsets.only(top: 80.0),
         alignment: Alignment.topCenter,

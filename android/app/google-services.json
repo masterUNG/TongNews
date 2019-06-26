@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "540890251807",
+    "firebase_url": "https://funnyquestion-bd59b.firebaseio.com",
+    "project_id": "funnyquestion-bd59b",
+    "storage_bucket": "funnyquestion-bd59b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540890251807:android:2fb316df527c48a7",
+        "android_client_info": {
+          "package_name": "th.in.androidthai.tong_news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "540890251807-0fathct0hsb5kb37sc8sg312g6fobfh3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "th.in.androidthai.tong_news",
+            "certificate_hash": "99f1de59cbbb9f0ab27aeb63c596235bc843b92a"
+          }
+        },
+        {
+          "client_id": "540890251807-jrsbbljsud801f2a2kq36uv5aep3gkr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA24PP6wLWqTM0xVXGkCVsevT91m1YWVQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "540890251807-jrsbbljsud801f2a2kq36uv5aep3gkr7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
