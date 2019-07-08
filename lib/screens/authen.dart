@@ -11,6 +11,8 @@ class Authen extends StatefulWidget {
 class _AuthenState extends State<Authen> {
   // Explicit
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  final formKey = GlobalKey<FormState>();
+  String emailString, passwordString;
 
   // Method
   @override
@@ -80,8 +82,26 @@ class _AuthenState extends State<Authen> {
         'Sign In',
         style: TextStyle(color: Colors.white),
       ),
-      onPressed: () {},
+      onPressed: () {
+        if (formKey.currentState.validate()) {
+          formKey.currentState.save();
+          print('Email = $emailString, Pass = $passwordString');
+          checkAuthen();
+        }
+      },
     );
+  }
+
+  Future<void> checkAuthen() async {
+    await firebaseAuth
+        .signInWithEmailAndPassword(
+            email: emailString, password: passwordString)
+        .then((response) {
+      print('Success Login');
+    }).catchError((response) {
+      String errorString = response.message;
+      print('errorSting = $errorString');
+    });
   }
 
   Widget emailTextFormField() {
@@ -92,6 +112,14 @@ class _AuthenState extends State<Authen> {
         child: TextFormField(
           decoration: InputDecoration(
               labelText: 'Email :', helperText: 'your@email.com'),
+          validator: (String value) {
+            if (value.isEmpty) {
+              return 'Please Fill Email';
+            }
+          },
+          onSaved: (String value) {
+            emailString = value;
+          },
         ),
       ),
     );
@@ -104,6 +132,14 @@ class _AuthenState extends State<Authen> {
         obscureText: true,
         decoration: InputDecoration(
             labelText: 'Password :', helperText: 'More 6 Charactor'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Please Type Password in Blank';
+          }
+        },
+        onSaved: (String value) {
+          passwordString = value;
+        },
       ),
     );
   }
@@ -149,14 +185,17 @@ class _AuthenState extends State<Authen> {
         ),
         padding: EdgeInsets.only(top: 80.0),
         alignment: Alignment.topCenter,
-        child: Column(
-          children: <Widget>[
-            showLogo(),
-            showName(),
-            emailTextFormField(),
-            passwordTextFormField(),
-            showButton(context),
-          ],
+        child: Form(
+          key: formKey,
+          child: Column(
+            children: <Widget>[
+              showLogo(),
+              showName(),
+              emailTextFormField(),
+              passwordTextFormField(),
+              showButton(context),
+            ],
+          ),
         ),
       ),
     );
