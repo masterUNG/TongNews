@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:tong_news/screens/news_list.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -48,6 +49,11 @@ class _RegisterState extends State<Register> {
       UserUpdateInfo userUpdateInfo = UserUpdateInfo();
       userUpdateInfo.displayName = nameString;
       objValue.updateProfile(userUpdateInfo);
+
+      var newsRoute = MaterialPageRoute(builder: (BuildContext context) => NewsList());
+      Navigator.of(context).pushAndRemoveUntil(newsRoute, (Route<dynamic> route) => false);
+
+
     });
   }
   

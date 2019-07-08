@@ -23,17 +23,16 @@ class _AuthenState extends State<Authen> {
     await firebaseAuth.currentUser().then((objValue) {
       if (objValue != null) {
         print('Logined');
-
-
-
+        moveToNewsList(context);
       }
     });
   }
 
-  void moveToNewsList(BuildContext context){
-
-    var newsListRoute = MaterialPageRoute(builder: (BuildContext context) => NewsList());
-
+  void moveToNewsList(BuildContext context) {
+    var newsListRoute =
+        MaterialPageRoute(builder: (BuildContext context) => NewsList());
+    Navigator.of(context)
+        .pushAndRemoveUntil(newsListRoute, (Route<dynamic> route) => false);
   }
 
   Widget mySizebox() {

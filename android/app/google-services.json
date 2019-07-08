@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "540890251807",
-    "firebase_url": "https://funnyquestion-bd59b.firebaseio.com",
-    "project_id": "funnyquestion-bd59b",
-    "storage_bucket": "funnyquestion-bd59b.appspot.com"
+    "project_number": "1064706828105",
+    "firebase_url": "https://tongnews-cd285.firebaseio.com",
+    "project_id": "tongnews-cd285",
+    "storage_bucket": "tongnews-cd285.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:540890251807:android:2fb316df527c48a7",
+        "mobilesdk_app_id": "1:1064706828105:android:2fb316df527c48a7",
         "android_client_info": {
           "package_name": "th.in.androidthai.tong_news"
         }
       },
       "oauth_client": [
         {
-          "client_id": "540890251807-0fathct0hsb5kb37sc8sg312g6fobfh3.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "th.in.androidthai.tong_news",
-            "certificate_hash": "99f1de59cbbb9f0ab27aeb63c596235bc843b92a"
-          }
-        },
-        {
-          "client_id": "540890251807-jrsbbljsud801f2a2kq36uv5aep3gkr7.apps.googleusercontent.com",
+          "client_id": "1064706828105-h9eqkk7jgph1tj6q4qdm3vbc9uqveeq5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA24PP6wLWqTM0xVXGkCVsevT91m1YWVQk"
+          "current_key": "AIzaSyAZw8NEffDee4LrVPuBfvMY0e6_6dEvlm4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "540890251807-jrsbbljsud801f2a2kq36uv5aep3gkr7.apps.googleusercontent.com",
+              "client_id": "1064706828105-h9eqkk7jgph1tj6q4qdm3vbc9uqveeq5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
